@@ -7,9 +7,10 @@ let newSquare = (totalSquares) => {
 	square.setAttribute("class", "square");
 	square.setAttribute(
 		"style",
-		`width: ${898 / totalSquares}px; height: ${470 / totalSquares}px;`
+		`width: ${898 / totalSquares}px; height: ${
+			470 / totalSquares
+		}px; opacity: 0;`
 	);
-	square.style.opacity = 0;
 	sketch.appendChild(square);
 };
 
@@ -24,6 +25,14 @@ function createSquares(numberOfSquares) {
 		newSquare(numberOfSquares);
 		createdSquares++;
 	}
+	let squares = [...sketch.querySelectorAll(".square")];
+	squares.forEach((e) => {
+		let opacityColor = 0;
+		e.addEventListener("mouseover", () => {
+			opacityColor += 0.1;
+			e.style.opacity = opacityColor;
+		});
+	});
 }
 
 document.addEventListener("DOMContentLoaded", () => createSquares(16));
