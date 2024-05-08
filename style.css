@@ -1,7 +1,3 @@
-:root {
-	--squares: 0;
-}
-
 body,
 html {
 	height: 100%;
@@ -79,15 +75,10 @@ small {
 	color: #524c42;
 }
 
-.container {
-	margin: 20px auto 0px;
-	width: 65%;
-	height: 70%;
-}
-
 .sketch {
-	width: 100%;
-	height: 100%;
+	margin: 20px auto 0px;
+	width: 900px;
+	height: 470px;
 	background-color: white;
 	border: 1px solid #32012f;
 	display: flex;
@@ -95,7 +86,5 @@ small {
 }
 
 .square {
-	border: 1px solid black;
-	width: calc(100% / var(--squares));
-	height: calc(100% / var(--squares));
+	background-color: rgb(0 0 0);
 }
