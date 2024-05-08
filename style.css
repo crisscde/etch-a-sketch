@@ -13,48 +13,76 @@ body {
 	padding: 0;
 	font-family: Helvetica, sans-serif;
 	font-weight: 400;
-	text-align: center;
+	font-size: 16px;
 	height: 100vh;
 	color: #151515;
 	background-color: whitesmoke;
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	text-wrap: pretty;
 }
 
 h1 {
+	width: 80%;
 	font-weight: 700;
-	margin: 0px;
-	padding: 20px 0px;
+	margin: 0px auto;
+	padding-bottom: 20px;
+	font-size: 28px;
+}
+
+.form {
+	width: 25%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: stretch;
 }
 
 form {
 	display: flex;
 	flex-direction: column;
+	gap: 15px;
 	margin: 0 auto;
-	width: 30%;
+	width: 80%;
 }
 
-.inputs {
-	padding-top: 15px;
+.squares,
+.color {
 	display: flex;
-	justify-content: space-around;
+	flex-direction: row;
 	align-items: center;
+	justify-content: space-between;
 }
 
 input[type="number"] {
-	width: 150px;
-	height: 50px;
+	width: 60px;
+	height: 40px;
+	padding: 16px;
+	padding-right: 10px;
+	font-size: 16px;
+	font-family: "Times New Roman", Times, serif;
+	font-weight: 600;
 }
 
 input[type="number"]::placeholder {
 	font-family: "Times New Roman", Times, serif;
 	color: #252a34;
-	font-size: 0.75rem;
-	font-weight: bolder;
+	font-size: 14px;
+}
+
+input[type="color"] {
+	width: 60px;
+	height: 40px;
+	padding: 1px;
 }
 
 button {
+	width: 180px;
+	height: 50px;
 	padding: 15px 25px;
 	background-color: #252a34;
-	border: 2px solid #252a34;
 	color: #eaeaea;
 	font-family: Helvetica, sans-serif;
 	font-size: 14px;
@@ -63,28 +91,37 @@ button {
 	transition: box-shadow 0.35s linear;
 }
 
+button#random-color {
+	background: rgb(180, 58, 58);
+	background: linear-gradient(
+		90deg,
+		rgba(180, 58, 58, 1) 0%,
+		rgba(189, 143, 59, 1) 20%,
+		rgba(207, 206, 62, 1) 40%,
+		rgba(65, 228, 214, 1) 60%,
+		rgba(209, 67, 239, 1) 80%,
+		rgba(252, 69, 69, 1) 100%
+	);
+	color: rgb(10 15 20);
+}
+
 button:hover {
-	box-shadow: 0px 0px 5px #252a34;
+	box-shadow: 0px 0px 4px #252a34;
 }
 
 small {
 	font-family: "Times New Roman", Times, serif;
-	font-weight: bolder;
-	font-style: italic;
-	font-size: 13px;
+	font-weight: 800;
+	font-size: 12px;
 	color: #524c42;
 }
 
 .sketch {
-	margin: 20px auto 0px;
-	width: 900px;
-	height: 470px;
+	margin: auto;
+	width: 1000px;
+	height: 625px;
 	background-color: white;
 	border: 1px solid #32012f;
 	display: flex;
 	flex-wrap: wrap;
-}
-
-.square {
-	background-color: rgb(0 0 0);
 }

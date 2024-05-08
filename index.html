@@ -8,22 +8,29 @@
 		<script src="/script.js" defer></script>
 	</head>
 	<body>
-		<h1>Etch-a-Sketch</h1>
-		<form>
-			<label for="squares"
-				>How many Squares do you want?
-				<small>Maximum Squares: 100</small>
-			</label>
-			<div class="inputs">
-				<input
-					type="number"
-					name="number-of-squares"
-					id="squares"
-					max="100"
-					placeholder="Number of squares" />
-				<button id="number">Create your sketch</button>
-			</div>
-		</form>
 		<section class="sketch" id="sketch"></section>
+		<section class="form">
+			<h1>Etch-a-Sketch</h1>
+			<form>
+				<div class="squares">
+					<label for="squares"
+						>How many Squares do you want?
+						<small>Maximum Squares: 100</small>
+					</label>
+					<input
+						type="number"
+						name="number-of-squares"
+						id="squares"
+						max="100"
+						placeholder="0" />
+				</div>
+				<button id="number">Create your sketch</button>
+				<div class="color">
+					<label for="color">Select the color do you want?</label>
+					<input type="color" name="selected-color" id="color" />
+				</div>
+				<button id="random-color" disabled>Use Random Color</button>
+			</form>
+		</section>
 	</body>
 </html>

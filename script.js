@@ -1,17 +1,39 @@
 let sketch = document.getElementById("sketch");
 let button = document.getElementById("number");
 let numberSquare = document.getElementById("squares");
+let randomColor = document.getElementById("random-color");
+let color = document.getElementById("color");
 
-let newSquare = (totalSquares) => {
+const RANDOM_RGB = () => {
+	const R = Math.floor(Math.random() * 255);
+	const G = Math.floor(Math.random() * 255);
+	const B = Math.floor(Math.random() * 255);
+	return `rgb(${R} ${G} ${B})`;
+};
+
+const NEW_SQUARE = (totalSquares) => {
 	let square = document.createElement("div");
 	square.setAttribute("class", "square");
 	square.setAttribute(
 		"style",
-		`width: ${898 / totalSquares}px; height: ${
-			470 / totalSquares
-		}px; opacity: 0;`
+		`width: ${998 / totalSquares}px; height: ${
+			625 / totalSquares
+		}px; opacity: 0`
 	);
 	sketch.appendChild(square);
+};
+
+let attachMouseOverEvent = () => {
+	let squares = [...sketch.querySelectorAll(".square")];
+	squares.forEach((element) => {
+		let opacityColor = 0;
+		element.addEventListener("mouseover", (squareEvent) => {
+			let selectedColor = color.value;
+			element.style.backgroundColor = selectedColor;
+			opacityColor += 0.1;
+			element.style.opacity = opacityColor;
+		});
+	});
 };
 
 function createSquares(numberOfSquares) {
@@ -22,19 +44,11 @@ function createSquares(numberOfSquares) {
 	}
 	let createdSquares = 0;
 	while (createdSquares < numberOfSquares * numberOfSquares) {
-		newSquare(numberOfSquares);
+		NEW_SQUARE(numberOfSquares);
 		createdSquares++;
 	}
-	let squares = [...sketch.querySelectorAll(".square")];
-	squares.forEach((e) => {
-		let opacityColor = 0;
-		e.addEventListener("mouseover", () => {
-			opacityColor += 0.1;
-			e.style.opacity = opacityColor;
-		});
-	});
+	attachMouseOverEvent();
 }
-
 document.addEventListener("DOMContentLoaded", () => createSquares(16));
 
 button.addEventListener("click", (ev) => {
