@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Etch-a-Sketch</title>
+		<link rel="stylesheet" href="/style.css" />
+		<script src="/script.js" defer></script>
+	</head>
+	<body>
+		<h1>Etch-a-Sketch</h1>
+		<form>
+			<label for="squares"
+				>How many Squares do you want?
+				<small>Maximum Squares: 100</small>
+			</label>
+			<div class="inputs">
+				<input
+					type="number"
+					name="number-of-squares"
+					id="squares"
+					max="100"
+					placeholder="Number of squares" />
+				<button id="number">Create your sketch</button>
+			</div>
+		</form>
+		<section class="container">
+			<article class="sketch" id="sketch"></article>
+		</section>
+	</body>
+</html>
